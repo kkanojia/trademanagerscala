@@ -1,0 +1,2 @@
+# trademanagerscala
+Scala sample
