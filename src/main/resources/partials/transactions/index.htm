@@ -1,0 +1,63 @@
+<div class="pull-right">
+
+ <a href="" class="btn btn-info" title="How it works" ng-click="openInformation()"> <span class="glyphicon glyphicon-question-sign">
+ </span>&nbsp; How it works? </a> &nbsp;&nbsp;
+
+ <a href="#!/transaction/create" class="btn btn-primary" title="Add New Transaction"> <span class="glyphicon glyphicon-flash">
+ </span>&nbsp; Enter New Trade </a> &nbsp;&nbsp;
+
+  <a href=""ng-really-message="Are you sure you want to delete all entries.? There is no going back from this."
+  ng-really-click="deleteAllEntries()" class="btn btn-danger" title="Delete"> <span class="glyphicon glyphicon-trash">
+ </span>&nbsp; Delete all current entries</a>
+
+</div>
+
+<div>
+ <h3>Trading Summary</h3>
+</div>
+
+<div class="text-center no padding" ng-show="loading">
+ <img src="img/Preloader_3.gif" class="img-responsive img-thumbnail" alt="Loading screen">
+</div>
+
+<div class="table-responsive" ng-show="!loading">
+ <table st-table="displayedCollection" st-safe-src="transactionEntries" class="table table-bordered table-striped table-condensed">
+  <thead>
+   <tr>
+    <th nowrap st-sort="id">TRADE ID</th>
+    <th nowrap st-sort="tradeDate">TRADE DATE</th>
+    <th nowrap st-sort="buySell">BUY SELL</th>
+    <th nowrap st-sort="assetCode">ASSET</th>
+    <th nowrap st-sort="currency">CURRENCY</th>
+    <th nowrap st-sort="quantity">QUANTITY</th>
+    <th nowrap st-sort="openQuantity">OPEN QTY</th>
+    <th nowrap st-sort="pricelocal">LOCAL CCY PRICE</th>
+    <th nowrap st-sort="priceUSD">USD PRICE</th>
+    <th nowrap st-sort="profit">PROFIT USD</th>
+    <th nowrap st-sort="cumulativeProfit">CUMULATIVE PROFIT USD</th>
+   </tr>
+  </thead>
+  <tbody>
+   <tr ng-repeat="tradeEntry in displayedCollection">
+    <td nowrap>{{tradeEntry.id }}</td>
+    <td nowrap>{{tradeEntry.tradeDate }}</td>
+    <td nowrap>{{tradeEntry.buySell }}</td>
+    <td nowrap>{{tradeEntry.assetCode }}</td>
+    <td nowrap>{{tradeEntry.currency }}</td>
+    <td nowrap>{{tradeEntry.quantity }}</td>
+    <td nowrap>{{tradeEntry.openQuantity }}</td>
+    <td nowrap>{{tradeEntry.pricelocal }}</td>
+    <td nowrap>{{tradeEntry.priceUSD }}</td>
+    <td nowrap>{{tradeEntry.profit }}</td>
+     <td nowrap>{{tradeEntry.cumulativeProfit }}</td>
+   </tr>
+  </tbody>
+  <tfoot>
+   <tr>
+    <td colspan="23" class="text-center">
+     <div class="nopadding" st-pagination="" st-items-by-page="100" st-displayed-pages="10"></div>
+    </td>
+   </tr>
+  </tfoot>
+ </table>
+</div>

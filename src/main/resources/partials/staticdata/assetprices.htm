@@ -1,0 +1,31 @@
+<div>
+ <h3>Asset Prices </h3>
+</div>
+
+<div class="table-responsive">
+ <table st-table="displayedCollection" st-safe-src="assetPrices" class="table table-bordered table-striped table-hover table-condensed">
+  <thead>
+   <tr>
+    <th class="success" nowrap st-sort="dataDate">Data Date</th>
+    <th class="success" nowrap st-sort="assetABC">ABC</th>
+    <th class="success" nowrap st-sort="assetDEF">DEF</th>
+    <th class="success" nowrap st-sort="assetXYZ">XYZ</th>
+   </tr>
+   <tr>
+ <th><input st-search="'dataDate'"  class="input-sm form-control" type="search"/></th>
+ <th><input st-search="'assetABC'" class="input-sm form-control" type="search"/></th>
+ <th><input st-search="'assetDEF'" class="input-sm form-control" type="search"/></th>
+  <th><input st-search="'assetXYZ'" class="input-sm form-control" type="search"/></th>
+ </tr>
+  </thead>
+  <tbody>
+   <tr ng-repeat="assetEntry in displayedCollection">
+    <td>{{assetEntry.dataDate }}</td>
+    <td>{{assetEntry.assetABC }}</td>
+    <td>{{assetEntry.assetDEF }}</td>
+    <td>{{assetEntry.assetXYZ }}</td>
+   </tr>
+  </tbody>
+ </table>
+</div>
+

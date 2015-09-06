@@ -1,0 +1,1 @@
+var exampleAppConfig = {useAuthTokenHeader: true};
