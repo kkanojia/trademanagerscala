@@ -6,9 +6,9 @@ import anorm._
 
 object DatabaseManager {
 
-  //Read these from properties file.
-  ConnectionPool.singleton("jdbc:postgresql://ec2-54-197-245-93.compute-1.amazonaws.com:5432/d4i0pcqp1ed6mu?ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory",
-    "menxmcqdjpamji", "1nRk4kqckYUaeLioSpb-mjTdG1")
+  //FIXME - Uncomment and replace with appropriate JDBC details for connection to database.
+  //TODO Read these from properties file. 
+  //ConnectionPool.singleton(JDBC_URL, USER, PASSWORD)
 
   implicit val conn: Connection = ConnectionPool.borrow()
 
