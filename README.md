@@ -1,4 +1,4 @@
-# trademanagerscala
+# Trade Manager Scala
 
 Trade buy sell sample implementation.
 UI built in Angular JS and backend in scala.
